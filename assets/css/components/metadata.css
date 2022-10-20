@@ -1,0 +1,26 @@
+div.posts-metadata {
+    font-size: 0.8rem;
+    line-height: 1.2rem;
+}
+
+div.metadata-item-contianer {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+div.metadata-item {
+    display: inline-block;
+    margin: 0 0.2rem;
+}
+
+span.metadata-text {
+    padding: 0 0.2rem;
+}
+
+span.metadata-tags {
+    display: inline-block;
+    margin: 0.2rem 0.2rem;
+    padding: 0 0.6rem;
+    border-radius: 0.6rem;
+    background-color: var(--nav-link-hover-bg-color);
+}

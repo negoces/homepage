@@ -1,0 +1,63 @@
+div.single-posts-card {
+    border: 1px solid var(--card-border-color);
+    margin: 1rem;
+    border-radius: 8px;
+    color: var(--text-color);
+}
+
+#single-title {
+    position: sticky;
+    top: 3rem;
+    font-weight: bold;
+    font-size: 1.2rem;
+    line-height: 2rem;
+    padding: 0.75rem;
+    border-bottom: 1px solid var(--card-border-color);
+    transition: background-color .2s ease 0s;
+}
+
+div.title-bg {
+    -webkit-backdrop-filter: saturate(180%) blur(5px);
+    backdrop-filter: saturate(180%) blur(5px);
+    background-color: var(--nav-bg-color);
+}
+
+#single-title a,
+#single-title a:visited {
+    display: inline-block;
+    color: var(--nav-link-color);
+    width: 2rem;
+    text-align: center;
+    border-radius: 1rem;
+    transition: background-color .2s ease 0s, color .2s ease 0s;
+}
+
+#single-title a:hover,
+#single-title a.current-item {
+    color: var(--nav-link-hover-color);
+    background-color: var(--nav-link-hover-bg-color);
+    text-decoration: none;
+}
+
+a#single-title-return {
+    margin: 0 0.5rem 0 0;
+}
+
+a#single-title-top {
+    float: right;
+    cursor: pointer;
+}
+
+img.single-cover {
+    width: 100%;
+    border-bottom: 1px solid var(--card-border-color);
+}
+
+div.single-metadata {
+    padding: 0.5rem 0.8rem;
+    border-bottom: 1px solid var(--card-border-color);
+}
+
+div.single-article {
+    padding: 0.5rem 1rem;
+}

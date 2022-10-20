@@ -1,0 +1,18 @@
+{{ define "content" }}
+<div class="single-posts-card">
+    <div id="single-title">
+        <a href="/posts/" id="single-title-return" title="返回">
+            <i class="fa-solid fa-arrow-left"></i>
+        </a>
+        {{ .Title }}
+        <a id="single-title-top" title="返回顶部">
+            <i class="fa-solid fa-chevron-up"></i>
+        </a>
+    </div>
+    {{ if .Params.cover }}<img class="single-cover" src="{{ .RelPermalink }}{{ .Params.cover }}" alt="cover">{{end}}
+    <div class="single-metadata">{{ partial "components/posts-metadata.html" . }}</div>
+    <div class="single-article">
+        {{ .Content }}
+    </div>
+</div>
+{{ end }}

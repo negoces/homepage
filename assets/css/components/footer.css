@@ -1,0 +1,11 @@
+footer#footer {
+    display: flex;
+    justify-content: center;
+}
+
+div.footer-copyright {
+    width: calc(100% - 2rem);
+    max-width: var(--global-max-width);
+    text-align: center;
+    line-height: 3rem;
+}

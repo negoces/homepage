@@ -1,0 +1,22 @@
+<header id="header" class="header">
+    <div class="header-navbar">
+        <div class="navbar-left-wrapper">
+            <a class="navbar-logo" href="/">{{ .Site.Title }}</a>
+        </div>
+
+        <div class="navbar-center-wrapper">
+            {{ range .Site.Params.menu }}
+            <a class="navbar-menu-item" href="{{ .url }}">{{ .name }}</a>
+            {{end}}
+        </div>
+
+        <div class="navbar-right-wrapper">
+            <a class="navbar-option-item" href="/search/">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </a>
+            <a class="navbar-option-item" id="navbar-darkMode-toggle">
+                <i class="fa-solid fa-circle-half-stroke"></i>
+            </a>
+        </div>
+    </div>
+</header>

@@ -1,0 +1,38 @@
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background-color: var(--global-bg-color);
+    font-family: sans-serif;
+    color: var(--text-color);
+}
+
+div#window {
+    width: 100%;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+main#main {
+    display: flex;
+    flex: 1 0 auto;
+    justify-content: center;
+}
+
+div#content {
+    width: calc(100% - 2rem);
+    max-width: var(--global-max-width);
+}
+
+a,
+a:visited {
+    text-decoration: none;
+}

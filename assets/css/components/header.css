@@ -1,0 +1,74 @@
+header.header {
+    display: flex;
+    justify-content: center;
+    position: sticky;
+    top: 0;
+    height: 3rem;
+    z-index: 2;
+    border-bottom: 0px solid var(--nav-bg-color);
+    transition: border .2s ease 0s, background-color .2s ease 0s;
+}
+
+header.header-bg {
+    border-bottom: 1px solid var(--nav-border-color);
+    -webkit-backdrop-filter: saturate(180%) blur(5px);
+    backdrop-filter: saturate(180%) blur(5px);
+    background-color: var(--nav-bg-color);
+}
+
+div.header-navbar {
+    width: calc(100% - 2rem);
+    max-width: var(--global-max-width);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+div.navbar-left-wrapper {
+    flex: 1;
+    text-align: left;
+}
+
+div.navbar-center-wrapper {
+    flex: 2;
+    text-align: center;
+}
+
+div.navbar-right-wrapper {
+    flex: 1;
+    text-align: right;
+}
+
+div.header-navbar a,
+div.header-navbar a:visited {
+    display: inline-block;
+    height: 2rem;
+    line-height: 2rem;
+    color: var(--nav-link-color);
+    vertical-align: middle;
+    text-align: center;
+    border-radius: 1rem;
+    transition: all .2s ease 0s;
+}
+
+div.header-navbar a:hover,
+div.navbar-center-wrapper a.navbar-current-item {
+    color: var(--nav-link-hover-color);
+    background-color: var(--nav-link-hover-bg-color);
+}
+
+div.navbar-left-wrapper a {
+    padding: 0 1rem;
+}
+
+div.navbar-center-wrapper a {
+    width: 5rem;
+}
+
+div.navbar-right-wrapper a {
+    padding: 0 0.5rem;
+}
+
+a#navbar-darkMode-toggle {
+    cursor: pointer;
+}

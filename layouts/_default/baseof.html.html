@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+
+<head>
+    {{ partial "head/metadata.html" . -}}
+    {{ partial "head/favicons.html" . -}}
+    {{ partial "head/import.html" . -}}
+</head>
+
+<body>
+    {{ block "body" . }}
+    <div id="window">
+        {{ partial "components/header.html" . }}
+        <main id="main">
+            <div id="content">
+                {{ block "content" . }}{{ end }}
+            </div>
+        </main>
+        {{ partial "components/footer.html" . }}
+    </div>
+    {{ end }}
+</body>
+
+</html>
