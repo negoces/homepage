@@ -27,5 +27,7 @@ function func_toggleTitleClass() {
     }
 }
 
-func_toggleTitleClass();
-window.addEventListener("scroll", func_toggleTitleClass);
+if (ele_singleTitle != null) {
+    func_toggleTitleClass();
+    window.addEventListener("scroll", func_toggleTitleClass);
+}
