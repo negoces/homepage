@@ -10,7 +10,7 @@ platform:
 steps:
   - name: build
     commands:
-    - hugo --printMemoryUsage --printUnusedTemplates --templateMetrics
+    - hugo --printMemoryUsage --printUnusedTemplates --templateMetrics --minify
 
   - name: deploy
     commands:
