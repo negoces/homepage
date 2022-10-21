@@ -4,7 +4,7 @@
     --home-max-width: 800px;
 }
 
-body {
+html[theme="light"] {
     --text-color: #222;
 
     --global-bg-color: #ffffff;
@@ -18,7 +18,7 @@ body {
     --card-border-color: #dadce0;
 }
 
-body.dark-theme {
+html[theme="dark"] {
     --text-color: #eee;
 
     --global-bg-color: #0d1117;

@@ -2,26 +2,28 @@ const btn = document.getElementById("navbar-darkMode-toggle");
 const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
 const currentTheme = localStorage.getItem("theme");
 const ele_bodyClass = document.body.classList;
+const ele_themeHtml = document.querySelector("html");
 
 function func_saveStatus() {
-    var theme = ele_bodyClass.contains("dark-theme") ? "dark" : "light";
+    var theme = ele_themeHtml.getAttribute("theme");
     localStorage.setItem("theme", theme);
 }
 
 if (currentTheme == "dark") {
-    ele_bodyClass.add("dark-theme");
+    ele_themeHtml.setAttribute("theme", "dark")
 } else if (currentTheme == "light") {
-    ele_bodyClass.remove("dark-theme");
+    ele_themeHtml.setAttribute("theme", "light")
 } else {
     if (prefersDarkScheme.matches) {
-        ele_bodyClass.add("dark-theme");
+        ele_themeHtml.setAttribute("theme", "dark")
     } else {
-        ele_bodyClass.remove("dark-theme");
+        ele_themeHtml.setAttribute("theme", "light")
     }
     func_saveStatus();
 }
 
 btn.addEventListener("click", () => {
-    ele_bodyClass.toggle("dark-theme")
+    var theme = (ele_themeHtml.getAttribute("theme") == "light") ? "dark" : "light";
+    ele_themeHtml.setAttribute("theme", theme);
     func_saveStatus();
 });
