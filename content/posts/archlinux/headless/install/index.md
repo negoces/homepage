@@ -208,6 +208,17 @@ pacman -Sy openssh
 systemctl enable sshd
 ```
 
+### [选] 修改笔记本合盖策略
+
+编辑 `/etc/systemd/logind.conf`，以下策略将在合盖时关闭屏幕
+
+```ini
+HandleLidSwitch=lock
+HandleLidSwitchExternalPower=lock
+```
+
+如果系统已经启动，可以使用 `sudo systemctl restart systemd-logind.service` 使立即生效
+
 ### [选] 添加 ArchlinuxCN 软件源
 
 1. 添加配置
