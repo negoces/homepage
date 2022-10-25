@@ -33,7 +33,8 @@ categories: [Arch Linux Headless]
 ### 设置镜像源
 
 ```bash
-echo 'Server = https://mirrors.bfsu.edu.cn/archlinux/$repo/os/$arch' | tee /etc/pacman.d/mirrorlist
+echo 'Server = https://mirrors.bfsu.edu.cn/archlinux/$repo/os/$arch' | \
+tee /etc/pacman.d/mirrorlist
 ```
 
 ### 进行分区并挂载
