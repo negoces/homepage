@@ -101,12 +101,10 @@ div.single-article pre {
     border-radius: 8px;
 }
 
-/* 代码换行，须完善行号后开启 */
-/* div.single-article code {
+div.single-article code {
     white-space: pre-wrap;
     overflow-wrap: anywhere;
-
-} */
+}
 
 div.single-article code {
     font-family: 'Fira Code', 'Courier New', Courier, monospace;

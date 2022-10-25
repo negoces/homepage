@@ -33,3 +33,14 @@ params:
       url: /
     - name: 文章
       url: /posts/
+
+markup:
+  highlight:
+    codeFences: true
+    guessSyntax: true
+    hl_Lines: ""
+    lineNoStart: 1
+    lineNos: true
+    lineNumbersInTable: false
+    noClasses: true
+    tabWidth: 4
