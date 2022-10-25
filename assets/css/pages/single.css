@@ -61,3 +61,60 @@ div.single-metadata {
 div.single-article {
     padding: 0.5rem 1rem;
 }
+
+div.single-article a {
+    color: #2d96bd;
+    transition: color .2s ease 0s;
+}
+
+div.single-article a:hover {
+    color: #ef3982;
+}
+
+div.single-article h2::before {
+    content: "#";
+    margin-right: 0.5rem;
+}
+
+div.single-article h3::before {
+    content: "##";
+    margin-right: 0.5rem;
+}
+
+div.single-article blockquote {
+    margin: 0;
+    padding: 1px 1rem;
+    border-left: 0.3rem solid #1793d1;
+    background-color: #1793d120;
+}
+
+div.single-article strong {
+    color: #ef3982;
+}
+
+div.single-article div.highlight>pre {
+    padding: 1rem;
+}
+
+div.single-article pre {
+    overflow: auto;
+    border-radius: 8px;
+}
+
+/* 代码换行，须完善行号后开启 */
+/* div.single-article code {
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+
+} */
+
+div.single-article code {
+    font-family: 'Fira Code', 'Courier New', Courier, monospace;
+}
+
+div.single-article p>code,
+div.single-article li>code {
+    padding: 0.05rem 0.3rem;
+    border-radius: 4px;
+    background-color: var(--nav-link-hover-bg-color);
+}

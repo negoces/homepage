@@ -8,6 +8,10 @@ div.metadata-item-contianer {
     flex-wrap: wrap;
 }
 
+div.metadata-tags-contianer {
+    margin-top: 0.5rem;
+}
+
 div.metadata-item {
     display: inline-block;
     margin: 0 0.2rem;

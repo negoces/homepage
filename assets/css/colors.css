@@ -5,7 +5,7 @@
 }
 
 html[theme="light"] {
-    --text-color: #222;
+    --text-color: #222222;
 
     --global-bg-color: #ffffff;
     --nav-bg-color: rgba(246, 248, 250, 0.8);
@@ -19,13 +19,13 @@ html[theme="light"] {
 }
 
 html[theme="dark"] {
-    --text-color: #eee;
+    --text-color: #a9a9b3;
 
     --global-bg-color: #0d1117;
     --nav-bg-color: rgba(22, 27, 34, 0.8);
     --nav-border-color: #30363d;
-    --nav-link-color: #ffffff;
-    --nav-link-hover-color: #8b949e;
+    --nav-link-color: #8b949e;
+    --nav-link-hover-color: #ffffff;
     --nav-link-hover-bg-color: #ffffff15;
 
     --card-border-color: #30363d;
