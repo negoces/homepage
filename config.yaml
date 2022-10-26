@@ -15,7 +15,7 @@ permalinks:
   posts: /posts/:slug/
 
 params:
-  repoName: negoces/homepage
+  repoName: git.negoces.top/negoces/homepage
   avatar: /img/avatar.png
   selfTags:
     - Student

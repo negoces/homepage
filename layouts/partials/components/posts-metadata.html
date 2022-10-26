@@ -16,7 +16,7 @@
         </div>
         <div class="metadata-item">
             <i class="fa-solid fa-hashtag"></i>{{ if .Site.Params.repoName }}<a class="metadata-text"
-                href='{{ printf "https://github.com/%s/commit/%s" .Site.Params.repoName .GitInfo.Hash }}'>{{
+                href='{{ printf "https://%s/commit/%s" .Site.Params.repoName .GitInfo.Hash }}'>{{
                 .GitInfo.AbbreviatedHash }}</a>{{ else }}<span class="metadata-text">{{
                 .GitInfo.AbbreviatedHash }}</span>{{ end }}
         </div>{{ end }}
