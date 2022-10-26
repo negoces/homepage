@@ -3,7 +3,7 @@
 # https://github.com/gohugoio/hugo/releases
 HUGO_VER=0.104.3
 TAR_NAME=hugo_extended_"$HUGO_VER"_Linux-64bit.tar.gz
-DIST_DIR=dist/
+DIST_DIR=public/
 
 HUGO_BIN=bin/hugo
 HUGO_URL=https://github.com/gohugoio/hugo/releases/download/v"$HUGO_VER"/"$TAR_NAME"
