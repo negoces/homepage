@@ -3,8 +3,8 @@ title: "Arch Linux 软路由: 基本路由"
 date: 2022-10-27T01:16:07+08:00
 slug: d6af7dd8
 cover: "cover.svg"
-tags: [Arch Linux Router]
-categories: [Arch Linux, Network, Router]
+categories: [Arch Linux Router]
+tags: [Arch Linux, Network, Router]
 ---
 
 打造属于自己的定制化路由器
