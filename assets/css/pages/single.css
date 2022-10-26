@@ -63,12 +63,12 @@ div.single-article {
 }
 
 div.single-article a {
-    color: #2d96bd;
+    color: var(--single-a-color);
     transition: color .2s ease 0s;
 }
 
 div.single-article a:hover {
-    color: #ef3982;
+    color: var(--single-a-hover-color);
 }
 
 div.single-article h2::before {
@@ -92,15 +92,6 @@ div.single-article strong {
     color: #ef3982;
 }
 
-div.single-article div.highlight>pre {
-    padding: 1rem;
-}
-
-div.single-article pre {
-    overflow: auto;
-    border-radius: 8px;
-}
-
 div.single-article code {
     white-space: pre-wrap;
     overflow-wrap: anywhere;
@@ -115,4 +106,132 @@ div.single-article li>code {
     padding: 0.05rem 0.3rem;
     border-radius: 4px;
     background-color: var(--nav-link-hover-bg-color);
+}
+
+/* Code Highlight */
+.chroma {
+    overflow: auto;
+    border-radius: 8px;
+    padding: 1rem;
+    color: #f8f8f2;
+    background-color: #282a36;
+}
+
+.chroma .err {
+    color: #960050;
+    background-color: #1e0010
+}
+
+.chroma .lntd {
+    vertical-align: top;
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+.chroma .lntable {
+    border-spacing: 0;
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+.chroma .hl {
+    background-color: #ffffcc
+}
+
+.chroma .lnt {
+    white-space: pre;
+    user-select: none;
+    margin-right: 0.4em;
+    padding: 0 0.4em 0 0.4em;
+    color: #7f7f7f
+}
+
+.chroma .ln {
+    white-space: pre;
+    user-select: none;
+    margin-right: 0.4em;
+    padding: 0 0.4em 0 0.4em;
+    color: #7f7f7f
+}
+
+.chroma .line {
+    display: flex;
+}
+
+.chroma .k,
+.chroma .kc,
+.chroma .kd,
+.chroma .kp,
+.chroma .kr,
+.chroma .kt,
+.chroma .no {
+    color: #66d9ef
+}
+
+.chroma .na,
+.chroma .nc,
+.chroma .nd,
+.chroma .ne,
+.chroma .nf,
+.chroma .nx,
+.chroma .gi {
+    color: #a6e22e
+}
+
+.chroma .kn,
+.chroma .nt,
+.chroma .o,
+.chroma .ow,
+.chroma .gd {
+    color: #f92672
+}
+
+.chroma .l,
+.chroma .se,
+.chroma .m,
+.chroma .mb,
+.chroma .mf,
+.chroma .mh,
+.chroma .mi,
+.chroma .il,
+.chroma .mo {
+    color: #ae81ff
+}
+
+.chroma .ld,
+.chroma .s,
+.chroma .sa,
+.chroma .sb,
+.chroma .sc,
+.chroma .dl,
+.chroma .sd,
+.chroma .s2,
+.chroma .sh,
+.chroma .si,
+.chroma .sx,
+.chroma .sr,
+.chroma .s1,
+.chroma .ss {
+    color: #e6db74
+}
+
+.chroma .c,
+.chroma .ch,
+.chroma .cm,
+.chroma .c1,
+.chroma .cs,
+.chroma .cp,
+.chroma .cpf,
+.chroma .gu {
+    color: #75715e
+}
+
+.chroma .ge {
+    font-style: italic
+}
+
+.chroma .gs {
+    font-weight: bold
 }

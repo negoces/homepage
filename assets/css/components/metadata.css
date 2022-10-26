@@ -17,8 +17,18 @@ div.metadata-item {
     margin: 0 0.2rem;
 }
 
+a.metadata-text,
 span.metadata-text {
     padding: 0 0.2rem;
+}
+
+a.metadata-text {
+    color: var(--posts-a-color);
+    transition: color .2s ease 0s;
+}
+
+a.metadata-text:hover {
+    color: var(--posts-a-hover-color);
 }
 
 span.metadata-tags {

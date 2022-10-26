@@ -15,10 +15,13 @@
             <i class="fa-solid fa-circle-user"></i><span class="metadata-text">{{ .GitInfo.AuthorName }}</span>
         </div>
         <div class="metadata-item">
-            <i class="fa-solid fa-hashtag"></i><span class="metadata-text">{{ .GitInfo.AbbreviatedHash }}</span>
+            <i class="fa-solid fa-hashtag"></i>{{ if .Site.Params.repoName }}<a class="metadata-text"
+                href='{{ printf "https://github.com/%s/commit/%s" .Site.Params.repoName .GitInfo.Hash }}'>{{
+                .GitInfo.AbbreviatedHash }}</a>{{ else }}<span class="metadata-text">{{
+                .GitInfo.AbbreviatedHash }}</span>{{ end }}
         </div>{{ end }}
     </div>
-    <div class="metadata-tags-contianer">
+    {{ if .Params.tags }}<div class="metadata-tags-contianer">
         {{ range .Params.tags }}<span class="metadata-tags">{{ . }}</span>{{end}}
-    </div>
+    </div>{{ end }}
 </div>

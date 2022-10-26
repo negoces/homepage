@@ -6,6 +6,10 @@
 
 html[theme="light"] {
     --text-color: #222222;
+    --posts-a-color: #2d96bd;
+    --posts-a-hover-color: #ef3982;
+    --single-a-color: #2d96bd;
+    --single-a-hover-color: #ef3982;
 
     --global-bg-color: #ffffff;
     --nav-bg-color: rgba(246, 248, 250, 0.8);
@@ -20,6 +24,10 @@ html[theme="light"] {
 
 html[theme="dark"] {
     --text-color: #a9a9b3;
+    --posts-a-color: #2d96bd;
+    --posts-a-hover-color: #ef3982;
+    --single-a-color: #2d96bd;
+    --single-a-hover-color: #ef3982;
 
     --global-bg-color: #0d1117;
     --nav-bg-color: rgba(22, 27, 34, 0.8);

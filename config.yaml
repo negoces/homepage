@@ -15,6 +15,7 @@ permalinks:
   posts: /posts/:slug/
 
 params:
+  repoName: negoces/homepage
   avatar: /img/avatar.png
   selfTags:
     - Student
@@ -35,12 +36,15 @@ params:
       url: /posts/
 
 markup:
+  # 语法高亮列表：https://gohugo.io/content-management/syntax-highlighting/#list-of-chroma-highlighting-languages
   highlight:
+    anchorLineNos: false
     codeFences: true
     guessSyntax: true
     hl_Lines: ""
     lineNoStart: 1
     lineNos: true
     lineNumbersInTable: false
-    noClasses: true
+    noClasses: false
+    style: monokai
     tabWidth: 4

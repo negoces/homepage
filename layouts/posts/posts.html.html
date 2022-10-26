@@ -1,13 +1,13 @@
 {{ define "content" }}
 {{ range ( where .Site.RegularPages "Section" "posts" ) }}
-<a class="posts-card" href="{{ .RelPermalink }}">
+<div class="posts-card">
     {{ if .Params.cover }}<div class="posts-card-cover" data-cover="{{ .RelPermalink }}{{ .Params.cover }}"></div>
     {{end}}
     <div class="posts-card-info">
-        <div class="posts-card-title">{{ .Title }}</div>
+        <a class="posts-card-title"  href="{{ .RelPermalink }}">{{ .Title }}</a>
         <div class="posts-card-metadata">{{ partial "components/posts-metadata.html" . }}</div>
         <div class="posts-card-summary">{{ .Summary | plainify }}</div>
     </div>
-</a>
+</div>
 {{ end }}
 {{ end }}
