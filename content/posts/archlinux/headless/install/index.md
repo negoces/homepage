@@ -146,8 +146,8 @@ ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
    ```bash
    # 将 <username> 替换为用户名
    export USER_NAME="<username>"
-   useradd -m -U -G wheel $HOST_NAME
-   passwd $HOST_NAME
+   useradd -m -U -G wheel $USER_NAME
+   passwd $USER_NAME
    # 输入密码，回车，确认密码，回车
    ```
 
