@@ -169,13 +169,35 @@ net.netfilter.nf_conntrack_max = 65535
 
 ### 开启 NAT 功能以及防火墙功能
 
-如需持久化，请编辑 `/etc/nftables.conf` 并启用 `nftables.service`
-
 ```bash
 # NAT
-nft add rule ip nat POSTROUTING oifname "ppp*" counter masquerade
+nft add table ip nat
+nft add chain ip nat postrouting "{ type nat hook postrouting priority srcnat; }"
+nft add rule ip nat postrouting oifname "ppp*" masquerade fully-random
 # 防火墙
-nft add rule ip filter INPUT iifname "ppp*" ct state related,established  counter accept
-nft add rule ip filter INPUT iifname "ppp*" ct state invalid  counter drop
-nft add rule ip filter INPUT iifname "ppp*" counter drop
+nft add table inet filter
+nft add chain inet filter input "{ type filter hook input priority filter; }"
+nft add rule inet filter input iifname "ppp*" ct state related,established accept
+nft add rule inet filter input iifname "ppp*" ct state invalid drop
+nft add rule inet filter input iifname "ppp*" drop
 ```
+
+如需持久化，将配置写入 `/etc/nftables.conf` 并启用 `nftables.service`
+
+```groovy
+table ip nat {
+	chain postrouting {
+		type nat hook postrouting priority srcnat; policy accept;
+		oifname "ppp*" masquerade fully-random
+	}
+}
+table inet filter {
+	chain input {
+		type filter hook input priority filter; policy accept;
+		iifname "ppp*" ct state established,related accept
+		iifname "ppp*" ct state invalid drop
+		iifname "ppp*" drop
+	}
+}
+```
+
