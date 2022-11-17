@@ -16,7 +16,7 @@ jobs:
     interpreter: !DefaultInterpreter
       commands:
       - sed -i 's/dl-cdn.alpinelinux.org/mirrors.bfsu.edu.cn/g' /etc/apk/repositories
-      - apk update && apk add hugo
+      - apk update && apk add hugo tzdata
       - hugo --printMemoryUsage --printUnusedTemplates --templateMetrics --minify
       - du -sh public/
     useTTY: false
