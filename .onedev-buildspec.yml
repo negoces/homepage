@@ -16,7 +16,7 @@ jobs:
     interpreter: !DefaultInterpreter
       commands:
       - sed -i 's/dl-cdn.alpinelinux.org/mirrors.bfsu.edu.cn/g' /etc/apk/repositories
-      - apk update && apk install hugo
+      - apk update && apk add hugo
     useTTY: false
     condition: ALL_PREVIOUS_STEPS_WERE_SUCCESSFUL
   - !CommandStep
