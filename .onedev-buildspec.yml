@@ -1,0 +1,40 @@
+version: 18
+jobs:
+- name: CI
+  steps:
+  - !CheckoutStep
+    name: checkout
+    cloneCredential: !DefaultCredential {}
+    withLfs: false
+    withSubmodules: false
+    cloneDepth: 1
+    condition: ALL_PREVIOUS_STEPS_WERE_SUCCESSFUL
+  - !CommandStep
+    name: install
+    runInContainer: true
+    image: alpine:3.17
+    interpreter: !DefaultInterpreter
+      commands:
+      - sed -i 's/dl-cdn.alpinelinux.org/mirrors.bfsu.edu.cn/g' /etc/apk/repositories
+      - apk update && apk install hugo
+    useTTY: false
+    condition: ALL_PREVIOUS_STEPS_WERE_SUCCESSFUL
+  - !CommandStep
+    name: build
+    runInContainer: true
+    image: alpine:3.17
+    interpreter: !DefaultInterpreter
+      commands:
+      - hugo --printMemoryUsage --printUnusedTemplates --templateMetrics --minify
+      - du -sh public/
+    useTTY: false
+    condition: ALL_PREVIOUS_STEPS_WERE_SUCCESSFUL
+  triggers:
+  - !BranchUpdateTrigger
+    branches: main
+  retryCondition: never
+  maxRetries: 3
+  retryDelay: 30
+  cpuRequirement: 250
+  memoryRequirement: 256
+  timeout: 3600
