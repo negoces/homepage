@@ -35,7 +35,7 @@ jobs:
       - echo "==> (2/4) Install openssh"
       - apk update && apk add openssh
       - echo "==> (3/4) Import Key"
-      - echo ${SSH_KEY} | tee ~/id_ed25519
+      - echo @secret:SSH_KEY@ | tee ~/id_ed25519
       - chmod 0600 ~/id_ed25519
       - echo "==> (4/4) Deploy"
       - ssh -p 2022 -i ~/id_ed25519 -o "StrictHostKeyChecking=no" "services@@10.1.0.50"
