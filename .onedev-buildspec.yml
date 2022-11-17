@@ -35,12 +35,12 @@ jobs:
       - echo "==> (2/4) Install openssh"
       - apk update && apk add openssh
       - echo "==> (3/4) Import Key"
-      - echo ${SSH_KEY} > /tmp/id_ed25519
-      - chmod 0600 /tmp/id_ed25519
+      - echo ${SSH_KEY} | tee ~/id_ed25519
+      - chmod 0600 ~/id_ed25519
       - echo "==> (4/4) Deploy"
-      - ssh -p 2022 -i /tmp/id_ed25519 -o "StrictHostKeyChecking=no" "services@@10.1.0.50"
+      - ssh -p 2022 -i ~/id_ed25519 -o "StrictHostKeyChecking=no" "services@@10.1.0.50"
         "rm -r ~/sites.d/homepage"
-      - scp -P 2022 -i /tmp/id_ed25519 -o "StrictHostKeyChecking=no" "public" "services@@10.1.0.50:sites.d/homepage"
+      - scp -P 2022 -i ~/id_ed25519 -o "StrictHostKeyChecking=no" "public" "services@@10.1.0.50:sites.d/homepage"
     useTTY: false
     condition: ALL_PREVIOUS_STEPS_WERE_SUCCESSFUL
   triggers:
