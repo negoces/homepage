@@ -15,8 +15,11 @@ jobs:
     image: alpine:3.17
     interpreter: !DefaultInterpreter
       commands:
+      - echo "==> (1/4) Set Repositories Mirror"
       - sed -i 's/dl-cdn.alpinelinux.org/mirrors.bfsu.edu.cn/g' /etc/apk/repositories
-      - apk update && apk add hugo tzdata
+      - echo "==> (2/4) Install hugo, tzdata, git"
+      - apk update && apk add hugo tzdata git
+      - echo "==> (3/4) Build Site"
       - hugo --printMemoryUsage --printUnusedTemplates --templateMetrics --minify
       - du -sh public/
     useTTY: false
