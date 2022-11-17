@@ -10,21 +10,13 @@ jobs:
     cloneDepth: 1
     condition: ALL_PREVIOUS_STEPS_WERE_SUCCESSFUL
   - !CommandStep
-    name: install
+    name: build
     runInContainer: true
     image: alpine:3.17
     interpreter: !DefaultInterpreter
       commands:
       - sed -i 's/dl-cdn.alpinelinux.org/mirrors.bfsu.edu.cn/g' /etc/apk/repositories
       - apk update && apk add hugo
-    useTTY: false
-    condition: ALL_PREVIOUS_STEPS_WERE_SUCCESSFUL
-  - !CommandStep
-    name: build
-    runInContainer: true
-    image: alpine:3.17
-    interpreter: !DefaultInterpreter
-      commands:
       - hugo --printMemoryUsage --printUnusedTemplates --templateMetrics --minify
       - du -sh public/
     useTTY: false
