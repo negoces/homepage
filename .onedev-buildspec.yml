@@ -21,6 +21,7 @@ jobs:
       - apk update && apk add hugo tzdata git
       - echo "==> (3/4) Build Site"
       - hugo --printMemoryUsage --printUnusedTemplates --templateMetrics --minify
+      - echo "==> (3/4) Calculate Site Size"
       - du -sh public/
     useTTY: false
     condition: ALL_PREVIOUS_STEPS_WERE_SUCCESSFUL
