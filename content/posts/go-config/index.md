@@ -5,6 +5,7 @@ slug: 93293139
 #cover: "cover.png"
 tags: [DevEnv]
 categories: [Golang]
+draft: true
 ---
 
 <!--more-->

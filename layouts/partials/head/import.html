@@ -15,7 +15,7 @@
 "/js/components/header.js"
 }}
 
-<link rel="stylesheet" href="/libs/normalize@8.0.1/normalize.min.css">
+<link rel="stylesheet" href="{{ ( resources.Get "/libs/normalize@8.0.1/normalize.css" | minify | resources.Fingerprint "sha512" ).RelPermalink }}">
 
 {{ $css := slice }}
 {{ range $cssList }}
@@ -31,7 +31,15 @@
 {{ $jsBundle := ( $js = $js | resources.Concat "/js/bundle.js" | js.Build | minify ) }}
 <script defer src="{{ $jsBundle.RelPermalink }}"></script>
 
-<!-- <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet"> -->
-<!-- <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/firacode/6.2.0/fira_code.min.css" media="none" onload="this.media='all'"> -->
+{{/* ==> Import Modules */}}
+{{ $modules := slice
+    "/js/components/c-banner.js"
+}}
+{{ range $modules }}
+{{/* <script type="module" src="{{ (resources.Get . | js.Build | minify ).RelPermalink }}"></script> */}}
+<script defer src="{{ (resources.Get . | js.Build | minify | resources.Fingerprint "sha512" ).RelPermalink }}"></script>
+{{ end }}
+{{/* <== Import Modules */}}
+
 <link rel="stylesheet" href="/libs/fontawesome@6.2.0/css/all.min.css" media="none" onload="this.media='all'">
 <link rel="stylesheet" href="/libs/firacode@6.2.0/fira_code.css" media="none" onload="this.media='all'">

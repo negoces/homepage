@@ -8,7 +8,8 @@
     </div>
     <div class="home-msg-contianer home-contianer">{{ .Site.Params.msg }}</div>
     <div class="home-social-contianer home-contianer">
-        {{ range .Site.Params.social }}<a class="home-social-tags" href="{{ .url }}"><i class="{{ .icon }}"></i>{{ .name }}</a>{{ end }}
+        {{ range .Site.Params.social }}<a class="home-social-tags" href="{{ .url }}"><i class="{{ .icon }}"></i>{{ .name
+            }}</a>{{ end }}
     </div>
 </div>
 {{ end }}
